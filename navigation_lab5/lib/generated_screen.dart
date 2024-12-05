@@ -62,10 +62,14 @@ class _GeneratedScreenState extends State<GeneratedScreen> {
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    widget.content,
-                    style: TextStyle(fontSize: 20),
-                    textAlign: TextAlign.center,
+                  AnimatedSwitcher(
+                    duration: Duration(milliseconds: 500),
+                    child: Text(
+                      widget.content,
+                      key: ValueKey<String>(widget.content),
+                      style: TextStyle(fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   SizedBox(height: 20),
                   TextField(
@@ -82,7 +86,13 @@ class _GeneratedScreenState extends State<GeneratedScreen> {
                     child: Text("Buat Screen"),
                   ),
                   SizedBox(height: 20),
-                  Text("Jumlah Screen yang Akan Ditampilkan: $_numScreens"),
+                  AnimatedSwitcher(
+                    duration: Duration(milliseconds: 500),
+                    child: Text(
+                      "Jumlah Screen yang Akan Ditampilkan: $_numScreens",
+                      key: ValueKey<int>(_numScreens),
+                    ),
+                  ),
                 ],
               )
             : ListView.builder(
@@ -95,7 +105,7 @@ class _GeneratedScreenState extends State<GeneratedScreen> {
                       child: ListTile(
                         title: Text("Screen #${index + 1}"),
                         subtitle: Text("Konten dari screen ${index + 1}"),
-                        onTap: () => _createNewScreen(index), // Pindah ke screen baru
+                        onTap: () => _createNewScreen(index),
                       ),
                     ),
                   );
@@ -136,9 +146,13 @@ class ScreenDetail extends StatelessWidget {
         title: Text("Screen $screenNumber"),
       ),
       body: Center(
-        child: Text(
-          "Selamat kamu membuat screen $screenNumber!",
-          style: TextStyle(fontSize: 24),
+        child: AnimatedSwitcher(
+          duration: Duration(milliseconds: 500),
+          child: Text(
+            "Selamat kamu membuat screen $screenNumber!",
+            key: ValueKey<int>(screenNumber),
+            style: TextStyle(fontSize: 24),
+          ),
         ),
       ),
     );
