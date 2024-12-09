@@ -11,7 +11,15 @@ class Screen2 extends StatelessWidget {
         dataProvider.studyDate.difference(DateTime.now()).inDays;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Screen 2")),
+      appBar: AppBar(
+        title: Text("Screen 2"),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back), 
+          onPressed: () {
+            Navigator.pop(context);  
+          },
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

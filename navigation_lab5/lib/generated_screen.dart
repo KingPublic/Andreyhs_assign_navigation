@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//tidak jadi pakai... :)
+
 class GeneratedScreen extends StatefulWidget {
   final String title; // Title unik dari screen
   final String content; // Konten unik dari screen
@@ -12,7 +14,7 @@ class GeneratedScreen extends StatefulWidget {
 
 class _GeneratedScreenState extends State<GeneratedScreen> {
   int _currentIndex = 0; // Untuk melacak tab aktif
-  int _numScreens = 1; // Default hanya satu screen
+  int _numScreens = 1; 
   final TextEditingController _screenController = TextEditingController();
 
   // Fungsi untuk mengubah jumlah screen berdasarkan input user
