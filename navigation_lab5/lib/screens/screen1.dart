@@ -54,6 +54,7 @@ class _Screen1State extends State<Screen1> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,7 +104,7 @@ class _Screen1State extends State<Screen1> {
                               .setData(
                             name: _nameController.text,
                             job: _jobController.text,
-                            studyDate: _selectedDate!,
+                            studyDate: _selectedDate!, // mengisi var di screen_data_provider
                           );
                           Navigator.push(
                             context,
