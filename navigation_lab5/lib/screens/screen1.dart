@@ -20,13 +20,13 @@ class _Screen1State extends State<Screen1> {
   // Fungsi untuk memperbarui jumlah screen berdasarkan input user
   void _updateNumScreens() {
     final int? newNumScreens = int.tryParse(_screenController.text);
-    if (newNumScreens != null && newNumScreens > 0 && newNumScreens <= 100) {
+    if (newNumScreens != null && newNumScreens > 0 && newNumScreens <= 500) {
       setState(() {
         _numScreens = newNumScreens;
       });
-    } else if (newNumScreens != null && newNumScreens > 100) {
+    } else if (newNumScreens != null && newNumScreens > 500) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Maksimal 100 screen!")),
+        SnackBar(content: Text("Maksimal 500 screen!")),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
